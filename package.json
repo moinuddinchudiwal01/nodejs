@@ -2,9 +2,11 @@
   "name": "nodejs",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/app.ts",
+    "build": "tsc",
+    "start": "node dist/app.js"
   },
   "repository": {
     "type": "git",
@@ -13,21 +15,22 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
+  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/moinuddinchudiwal01/nodejs/issues"
   },
   "homepage": "https://github.com/moinuddinchudiwal01/nodejs#readme",
-  "devDependencies": {
-    "@types/express": "^5.0.5",
-    "@types/node": "^24.9.2",
+  "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^17.2.3",
-    "eslint": "^9.38.0",
     "express": "^5.1.0",
-    "install": "^0.13.0",
+    "mongoose": "^8.19.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.5",
+    "@types/node": "^24.10.0",
     "nodemon": "^3.1.10",
-    "npm": "^11.6.2",
-    "prettier": "^3.6.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }
