@@ -2,6 +2,7 @@ import express from "express";
 import { dbConnection } from "./config/db";
 import { Config } from "./config/config";
 import cors from "cors";
+import indexRoutes from "./routes";
 
 const app = express();
 
@@ -9,6 +10,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({ origin: "*", credentials: true }));
+
+// Routes
+app.use("/api/v1", indexRoutes);
 
 // Connect to Database and Start Server
 dbConnection()
